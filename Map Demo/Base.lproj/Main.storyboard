@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Map_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U3O-tk-jLU">
+                                <rect key="frame" x="-4" y="59" width="328" height="509"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Axi-UZ-loY">
+                                <rect key="frame" x="-4" y="15" width="328" height="44"/>
+                                <items>
+                                    <navigationItem title="Car Tracking" id="v0Z-9C-QQt">
+                                        <barButtonItem key="leftBarButtonItem" title=" Manual" id="3Cg-Et-lVM">
+                                            <connections>
+                                                <action selector="centerMap:" destination="vXZ-lx-hvc" id="HV8-TY-8yR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Auto " id="4hv-Dx-Eqn">
+                                            <connections>
+                                                <action selector="autoTracking:" destination="vXZ-lx-hvc" id="DFw-nn-vba"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Speed is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxW-Zh-nCn">
+                                <rect key="frame" x="20" y="527" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="U3O-tk-jLU" secondAttribute="trailing" constant="-20" id="3BO-vZ-CWP"/>
+                            <constraint firstItem="U3O-tk-jLU" firstAttribute="top" secondItem="Axi-UZ-loY" secondAttribute="bottom" id="6m0-pb-uIP"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="U3O-tk-jLU" secondAttribute="bottom" id="9Qk-Sg-QPZ"/>
+                            <constraint firstItem="Axi-UZ-loY" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="HiR-a5-26c"/>
+                            <constraint firstItem="U3O-tk-jLU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-20" id="cv7-U8-uzp"/>
+                            <constraint firstItem="Axi-UZ-loY" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="15" id="jRn-pQ-J6H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Axi-UZ-loY" secondAttribute="trailing" constant="-20" id="ybC-MC-wmb"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="map" destination="U3O-tk-jLU" id="dWz-DF-2oC"/>
+                        <outlet property="speedLabel" destination="HxW-Zh-nCn" id="VrW-Gz-euw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1340" y="-87"/>
+        </scene>
+    </scenes>
+</document>
